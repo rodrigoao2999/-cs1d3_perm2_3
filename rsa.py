@@ -62,7 +62,7 @@ def Generator ():
         print("Ingrese un valor PRIMO para p: ")
         p = int(input())
     
-    print("Ingrese el valor de p: ")
+    print("Ingrese el valor de q: ")
     q = int(input())
     while(nprimo(q) == False):
         print("Ingrese un valor PRIMO para q: ")
