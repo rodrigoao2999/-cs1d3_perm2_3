@@ -1,6 +1,6 @@
 # cs1d3_perm2_3
 
-### rsa.py
+## rsa.py
 #### Este archivo realiza el cifrado de enteros y a continuacion explicare los metodos implementados: 
 
 ##### 1-. Importandos la libreria random
@@ -15,9 +15,9 @@
 ##### 10-. la funcion cifrar lo que hara es que con los valores de p y q que el usuario ingreso, calcularemos n con la formula aprendida, n=p*q, phin = (p-1)*(q-1), e (un número random entre 2 a n-1), d (inversa de e en mod phin). Y se cifra el mensaje con la operación de exponenciación modular c = m^e mod n. Y se retornan lo valores de n,e,d,c
 ##### 11-. la funcion decifrado hara que los valores obtenidos de la función cifrado se descifra el mensaje c, mediante la operación m = c^d mod n 
 
-### rsaAttac.py
+## rsaAttac.py
 
 #### Este archivo contiene el ataque y las funciones utilizadas son las siguientes :
-##### 1-. factorizator(), que hace factorizaciones mediante prueba y error. Una vez obtenidos los factores de n (p y q), obtenemos Phi de n, y con ello obtenemos d (inversa de e en mod phi) y realizamos la operación m = c^d mod n
-##### 2-. Verifica si el gcd de e1 y e2 es 1 (si son coprimos). En caso sea así, procede a verificar que c2 y n sean coprimos para calcular la inversa de c2. Se calcula la inversa de x. Tras esto se calcula m mediante la operación m = (c1^x * c2'^-y) mod n si es que y<0 o m = (c1^-x * c2'^y) mod n si x>0
-##### 3-. Las potenciaciones requeridas en attack2 son muy grandes, por lo que se genera un overflow, para evitar dicho problema se creó la función Mypow. Dicha función realiza lo mismo que la función pow convencional, con la excepción de no convertir los valores a tipo float, esto permite evitar dicho overflow.
+##### 1-.FirstAttack es la funcion con la cual si queremos tener m tendremos que tener los factores de ny esto lo vamos a tener con la funcion factorizador(), lo que hara sera realizar factorizaciones por el metodo de prueba y error y cuando los factores de n (p y q), obtenemos Phi de n, y con ello obtenemos d (inversa de e en mod phi) y realizamos la operación m = c^d mod n
+##### 2-. SecondAttack si el MCD de e1 y e2 es 1 (si son coprimos). Si pasa eso entonces se verifica que n y c2 sean coprimos y asi podamos calcular la inversa de c2. Se calcula la inversa de x y realizado eso se calcula m mediante la operación m = (c1^x * c2'^-y) mod n si es que y<0 o m = (c1^-x * c2'^y) mod n si x>0
+##### 3-. Cuando queremos hacer potenciacion en SecondAttack los valores son muy extensos y eso nos da un overflow, y para no tener ese pproblema hice la funcion pot y esta funcion lo que hace es o mismo que  la funcion pow que todos conocemos pero  no convierte los valores en float y aasi no se dara el overflow. 
